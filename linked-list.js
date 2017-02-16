@@ -66,6 +66,17 @@ function LinkedList(){
 		return length;
 	};
 
-	this.toString = function(){};
+	this.toString = function(){
+		var current = head,
+			string = '';
+
+		while(current){
+			string += current.element + (current.next ? "," : "");
+			current = current.next;
+		}
+
+		return string;
+	};
+
 	this.print = function(){};
 }
