@@ -57,7 +57,10 @@ function LinkedList(){
 	this.removeAt = function(position){};
 	this.remove = function(element){};
 	this.indexOf = function(element){};
-	this.isEmpty = function(){};
+
+	this.isEmpty = function(){
+		return length == 0;
+	};
 
 	this.size = function(){
 		return length;
