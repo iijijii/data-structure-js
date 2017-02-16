@@ -77,6 +77,8 @@ function LinkedList(){
 
 		return string;
 	};
-
-	this.print = function(){};
+	
+	this.print = function(){
+		console.log(this.toString());
+	};
 }
