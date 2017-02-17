@@ -54,7 +54,31 @@ function LinkedList(){
 		return true;
 	};
 
-	this.removeAt = function(position){};
+	this.removeAt = function(position){
+		var current = head,
+			previous,
+			index = 0;
+
+		if (position > length - 1){
+			return null;
+		}
+
+		if (position === 0){
+			head = current.next;
+		}
+		else {
+			while(index++ < position){
+				previous = current;
+				current = current.next;
+			}
+			previous.next = current.next;
+		}
+
+		length--;
+
+		return current.element;
+	};
+
 	this.remove = function(element){};
 	this.indexOf = function(element){};
 
