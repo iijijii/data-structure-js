@@ -80,7 +80,21 @@ function LinkedList(){
 	};
 
 	this.remove = function(element){};
-	this.indexOf = function(element){};
+
+	this.indexOf = function(element){
+		var current = head,
+			index = 0;
+		while(current){
+			if (current.element === element){
+				return index;
+			}
+			else{
+				current = current.next;
+				index++;
+			}
+		}
+		return -1;
+	};
 
 	this.isEmpty = function(){
 		return length == 0;
