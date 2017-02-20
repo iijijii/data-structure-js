@@ -32,4 +32,20 @@ function Set(){
 	this.values = function(){
 		return Object.keys(items);
 	};
+
+	this.union = function(otherSet){
+		var unionSet = new Set();
+
+		var values = this.values();
+		for (var i=0; i<values.length; i++){
+			unionSet.add(values[i]);
+		}
+
+		values = otherSet.values();
+		for (var i=0; i<values.length; i++){
+			unionSet.add(values[i]);
+		}
+
+		return unionSet;
+	};
 }
