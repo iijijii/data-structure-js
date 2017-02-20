@@ -30,6 +30,9 @@ function Dictionary(){
 		return Object.keys(items).length;
 	};
 
-	this.keys = function(){};
+	this.keys = function(){
+		return Object.keys(items);
+	};
+
 	this.values = function(){};
 }
