@@ -18,7 +18,10 @@ function Dictionary(){
 		return key in items;
 	};
 
-	this.get = function(key){};
+	this.get = function(key){
+		return this.has(key) ? items[key] : undefined;
+	};
+
 	this.clear = function(){};
 	this.size = function(){};
 	this.keys = function(){};
