@@ -24,4 +24,8 @@ function Set(){
 	this.clear = function(value){
 		items = {};
 	}
+
+	this.size = function(){
+		return Object.keys(items).length;
+	};
 }
