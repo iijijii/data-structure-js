@@ -26,7 +26,10 @@ function Dictionary(){
 		items = {};
 	};
 
-	this.size = function(){};
+	this.size = function(){
+		return Object.keys(items).length;
+	};
+
 	this.keys = function(){};
 	this.values = function(){};
 }
