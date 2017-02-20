@@ -1,7 +1,10 @@
 function Dictionary(){
 	var items = {};
 
-	this.set = function(key, value){};
+	this.set = function(key, value){
+		items[key] = value;
+	};
+
 	this.remove = function(key){};
 	this.has = function(key){};
 	this.get = function(key){};
