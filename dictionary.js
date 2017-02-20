@@ -22,7 +22,10 @@ function Dictionary(){
 		return this.has(key) ? items[key] : undefined;
 	};
 
-	this.clear = function(){};
+	this.clear = function(){
+		items = {};
+	};
+
 	this.size = function(){};
 	this.keys = function(){};
 	this.values = function(){};
