@@ -20,4 +20,8 @@ function Set(){
 		}
 		return false;
 	};
+
+	this.clear = function(value){
+		items = {};
+	}
 }
