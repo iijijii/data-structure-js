@@ -34,5 +34,11 @@ function Dictionary(){
 		return Object.keys(items);
 	};
 
-	this.values = function(){};
+	this.values = function(){
+		var values = [];
+		for (var i in items){
+			values.push(items[i]);
+		}
+		return values;
+	};
 }
