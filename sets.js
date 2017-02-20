@@ -28,4 +28,8 @@ function Set(){
 	this.size = function(){
 		return Object.keys(items).length;
 	};
+
+	this.values = function(){
+		return Object.keys(items);
+	};
 }
