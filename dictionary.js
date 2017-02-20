@@ -5,7 +5,14 @@ function Dictionary(){
 		items[key] = value;
 	};
 
-	this.remove = function(key){};
+	this.remove = function(key){
+		if (items.has(key))
+		{
+			delete items[key];
+			return true;
+		}
+		return false;
+	};
 
 	this.has = function(key){
 		return key in items;
