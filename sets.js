@@ -12,4 +12,12 @@ function Set(){
 		}
 		return false;
 	};
+
+	this.remove = function(value){
+		if (this.has(value)){
+			delete items[value];
+			return true;
+		}
+		return false;
+	};
 }
