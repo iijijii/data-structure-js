@@ -6,7 +6,11 @@ function Dictionary(){
 	};
 
 	this.remove = function(key){};
-	this.has = function(key){};
+
+	this.has = function(key){
+		return key in items;
+	};
+
 	this.get = function(key){};
 	this.clear = function(){};
 	this.size = function(){};
