@@ -48,4 +48,17 @@ function Set(){
 
 		return unionSet;
 	};
+
+	this.intersection = function(otherSet){
+		var intersectionSet = new Set();
+
+		var values = this.values();
+		for (var i=0; i<values.length; i++){
+			if (otherSet.has(values[i])){
+				intersectionSet.add(values[i]);
+			}
+
+			return intersectionSet;
+		}
+	};
 }
