@@ -88,7 +88,21 @@ function BinarySearchTree(){
 		return null;
 	};
 
-	this.max = function(){};
+	this.max = function(){
+		return maxNode(root);
+	};
+
+	var maxNode = function(node){
+		if (node){
+			while(node && node.right !== null){
+				node = node.right;
+			}
+
+			return node.key;
+		}
+		return null;
+	}
+
 	this.key = function(key){};
 
 }
