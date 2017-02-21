@@ -35,7 +35,23 @@ function BinarySearchTree(){
 		}
 	};
 
-	this.search = function(key){};
+	this.search = function(key){
+		return searchNode(root, key);
+	};
+
+	var searchNode = function(node, key){
+		if (node === null){
+			return false;
+		}
+		if (key < node.key){
+			return searchNode(node.left, key);
+		} else if (key < node.key){
+			return searchNode(node.right, key);
+		}
+		else {
+			return true;
+		}
+	};
 
 	this.inOrderTraverse = function(callback){
 		inOrderTraverseNode(root, callback);
