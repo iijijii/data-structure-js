@@ -26,7 +26,24 @@ function HashTable(){
 
 	this.remove  = function(key){
 		var position = loseloseHashCode(key);
-		table[position] = undefined;
+
+		if (table[position] == undefined){
+			return false;
+		}
+
+		if (table[position].key === key){
+			table[position] = undefined;
+		} else {
+			var index = ++position;
+			while(table[index] === undefined
+				|| table[index].key !== key){
+				index++;
+			}
+			if (table[index].key === key){
+				table[index] = undefined;
+				return true;
+			}
+		}
 	};
 
 	this.get = function(key){
