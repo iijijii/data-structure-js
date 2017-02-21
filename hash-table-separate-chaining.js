@@ -21,7 +21,31 @@ function HashTable(){
 
 	this.remove  = function(key){
 		var position = loseloseHashCode(key);
-		table[position] = undefined;
+
+		if (table[position] !== undefined)
+		{
+			var current = table[position].getHead();
+
+			while(current.next){
+				if(current.element.key === key){
+					table[position].remove(current.element);
+					if (table[position].isEmpty()){
+						table[position] = undefined;
+					}
+				}
+				current = current.next;
+			}
+
+			if(current.element.key === key){
+				table[position].remove(current.element);
+				if (table[position].isEmpty()){
+					table[position] = undefined;
+				}
+				return true;
+			}
+		}
+
+		return false;
 	};
 
 	this.get = function(key){
