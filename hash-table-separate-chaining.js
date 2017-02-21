@@ -26,3 +26,12 @@ function HashTable(){
 		return table[position];
 	};
 }
+
+function ValuePair = function(key, value){
+	this.key = key;
+	this.value = value;
+
+	this.toString = function(){
+		return '[' + this.key + ' - ' + this.value + ']';
+	}
+};
