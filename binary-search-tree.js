@@ -53,6 +53,8 @@ function BinarySearchTree(){
 		}
 	};
 
+	this.remove = function(key){};
+
 	this.inOrderTraverse = function(callback){
 		inOrderTraverseNode(root, callback);
 	};
