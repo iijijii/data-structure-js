@@ -21,5 +21,8 @@ function HashTable(){
 		table[position] = undefined;
 	};
 
-	this.get = function(key){};
+	this.get = function(key){
+		var position = loseloseHashCode(key);
+		return table[position];
+	};
 }
