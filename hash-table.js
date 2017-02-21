@@ -16,6 +16,10 @@ function HashTable(){
 		table[position] = value;
 	};
 
-	this.remove  = function(key){};
+	this.remove  = function(key){
+		var position = loseloseHashCode(key);
+		table[position] = undefined;
+	};
+
 	this.get = function(key){};
 }
