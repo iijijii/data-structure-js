@@ -26,7 +26,21 @@ function HashTable(){
 
 	this.get = function(key){
 		var position = loseloseHashCode(key);
-		return table[position];
+
+		if (table[position] == undefined)
+			return undefined;
+
+		var current = table[position].getHead();
+
+		while(current.next){
+			if (current.element.key === key){
+				return curent.element.value;
+			}
+			current = current.next;
+		}
+
+		if (current.element.key === key){
+			return curent.element.value;
 	};
 }
 
