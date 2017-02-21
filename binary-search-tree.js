@@ -36,10 +36,23 @@ function BinarySearchTree(){
 	};
 
 	this.search = function(key){};
-	this.inOrderTraverse= function(){};
+
+	this.inOrderTraverse = function(callback){
+		inOrderTraverseNode(root, callback);
+	};
+
+	var inOrderTraverseNode = function(node, callback){
+		if (node !== null){
+			inOrderTraverseNode(node.left, callback);
+			callback(node.key);
+			inOrderTraverseNode(node.right, callback);
+		}
+	};
+
 	this.preOrderTraverse= function(){};
 	this.postOrderTraverse= function(){};
 	this.min = function(){};
 	this.max = function(){};
 	this.key = function(key){};
+
 }
