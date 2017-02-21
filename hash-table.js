@@ -10,7 +10,12 @@ function HashTable(){
 		return hash % 37;
 	}; 
 
-	this.put = function(key, value){};
+	this.put = function(key, value){
+		var position = loseloseHashCode(key);
+		console.log(position + ' - ' + key);
+		table[position] = value;
+	};
+
 	this.remove  = function(key){};
 	this.get = function(key){};
 }
