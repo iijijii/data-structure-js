@@ -7,4 +7,13 @@ function BinarySearchTree(){
 	};
 
 	var root = null;
+
+	this.insert = function(key){};
+	this.search = function(key){};
+	this.inOrderTraverse= function(){};
+	this.preOrderTraverse= function(){};
+	this.postOrderTraverse= function(){};
+	this.min = function(){};
+	this.max = function(){};
+	this.key = function(key){};
 }
