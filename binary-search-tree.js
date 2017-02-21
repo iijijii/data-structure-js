@@ -73,7 +73,21 @@ function BinarySearchTree(){
 		}
 	};
 
-	this.min = function(){};
+	this.min = function(){
+		return minNode(root);
+	};
+
+	var minNode = function(node){
+		if (node){
+			while(node && node.left !== null){
+				node = node.left;
+			}
+
+			return node.key;
+		}
+		return null;
+	};
+
 	this.max = function(){};
 	this.key = function(key){};
 
