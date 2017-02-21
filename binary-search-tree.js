@@ -61,7 +61,18 @@ function BinarySearchTree(){
 		}
 	};
 
-	this.postOrderTraverse= function(){};
+	this.postOrderTraverse = function(callback){
+		postOrderTraverseNode(root, callback);
+	};
+
+	var postOrderTraverseNode = function(node, callback){
+		if (node !== null){
+			postOrderTraverseNode(node.left, callback);
+			postOrderTraverseNode(node.right, callback);
+			callback(node.key);
+		}
+	};
+
 	this.min = function(){};
 	this.max = function(){};
 	this.key = function(key){};
