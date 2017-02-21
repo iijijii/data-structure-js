@@ -53,8 +53,70 @@ function BinarySearchTree(){
 		}
 	};
 
-	this.remove = function(key){};
+	this.remove = function(key){
+		root = removeNode(root, key);
+	};
 
+	var removeNode = function(node, key){
+		if (node === null){
+			return null;
+		}
+		if (key < node.key){
+			node.left = removeNode(node.key, key);
+			return node;
+		} else if (key > node.key){
+			node.right = removeNode(node.key, key);
+			return node;
+		} else {
+
+			// case1 - a leaf node
+			if (node.left === null && node.right === null){
+				node = null;
+				return node;
+			}
+
+			// case2 - a node with only 1 child
+			if (node.left == null){
+				node = node.right;
+				return node;
+			} else if (node.right == null){
+				node = node.left;
+				return node;
+			}
+
+			// case 3 - a node with 2 children
+			var aux = findMinNode(node.right);
+			node.key = aux.key;
+			node.right = removeNode(node.right, aux.key);
+			return node;
+		}
+	};
+
+	var findMinNode = function(node){
+		if (node){
+			while(node && node.left !== null){
+				node = node.left;
+			}
+
+			return node;
+		}
+		return null;
+	};
+
+	this.max = function(){
+		return maxNode(root);
+	};
+
+	var maxNode = function(node){
+		if (node){
+			while(node && node.right !== null){
+				node = node.right;
+			}
+
+			return node.key;
+		}
+		return null;
+	}
 	this.inOrderTraverse = function(callback){
 		inOrderTraverseNode(root, callback);
 	};
