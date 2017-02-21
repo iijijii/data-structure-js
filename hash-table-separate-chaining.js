@@ -12,8 +12,11 @@ function HashTable(){
 
 	this.put = function(key, value){
 		var position = loseloseHashCode(key);
-		console.log(position + ' - ' + key);
-		table[position] = value;
+
+		if (table[position] == undefined){
+			table[position] = new LinkedList();
+		}
+		table[position].append(new ValuePair(key, value));
 	};
 
 	this.remove  = function(key){
