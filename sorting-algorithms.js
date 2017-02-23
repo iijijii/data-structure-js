@@ -1,6 +1,3 @@
-function SortingAlgorithms{
-}
-
 function ArrayList(){
 	var array = [];
 
