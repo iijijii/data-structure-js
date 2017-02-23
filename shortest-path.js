@@ -40,4 +40,25 @@ function ShortestPath(graph){
 		}
 		return minIndex;
 	};
+
+	this.floydWarshall = function(){
+		var dist = [];
+		var length = this.graph.length;
+
+		for (var i = 0; i < length; i++){
+			dist[i] = [];
+			for (var j = 0; j<length; j++){
+				dist[i][j] = this.graph[i][j];
+			}
+		}
+		for (var k = 0; k < length; k++){
+			for (i = 0; i < length; i++){
+				for (j = 0; j < length; j++){
+					if (dist[i][k] + dist[k][j] < dist[i][j]){
+						dist[i][j] = dist[i][k] + dist[k][j];
+					}
+				}
+			}
+		}
+	};
 }
