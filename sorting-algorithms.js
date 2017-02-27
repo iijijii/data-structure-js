@@ -136,4 +136,41 @@ function ArrayList(){
 		}
 		return i;
 	}
+
+	this.heapSort = function(){
+		var heapSize = array.length;
+		buildHeap(array);
+
+		while(heapSize > 1){
+			heapSize--;
+			swap(array, 0, heapSize);
+			heapify(array, heapSize, 0);
+		}
+	};
+
+	var buildHeap = function(array){
+		var heapSize = array.length;
+		for (var i = Math.floor(array.length / 2); i >= 0; i--){
+			heapify(array, heapSize, i);
+		}
+	};
+
+	var heapify = function(array, heapSize, i){
+		var left = i * 2 + 1;
+		var right = i * 2 + 2;
+		var largest = i;
+
+		if (left < heapSize && array[left] > array[largest]){
+			largest = left;
+		}
+
+		if (right < heapSize && array[right] > array[largest]){
+			largest = left;
+		}
+
+		if (largest !== i){
+			swap(array, i, largest);
+			heapify(array, heapSize, largest);
+		}
+	};
 }
